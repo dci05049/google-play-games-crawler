@@ -1,3 +1,6 @@
-{% for title in game_titles %}
-	{{title.text}}
+{% for category in all_game_categories %}
+	{{category.category_title}}
+	{% for title in all_game_categories.all_titles %}
+		{{title}}
+	{% endfor %}
 {% endfor %}
