@@ -8,15 +8,13 @@ from selenium.common.exceptions import TimeoutException
 
 app = Flask(__name__)
 
+
 browser = webdriver.Chrome();
 browser.get("https://play.google.com/store/apps/category/GAME/collection/topselling_free?hl=en");
 
 game_titles = browser.find_elements_by_xpath('//a[@class="title"]')
 
 num_pages_titles = len(game_titles)
-
-for i in range(num_pages_titles):
-	print(game_titles[i].text)
 
 @app.route('/')
 def index():
