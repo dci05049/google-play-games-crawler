@@ -13,17 +13,18 @@ app = Flask(__name__)
 action_url = "https://play.google.com/store/apps/category/GAME_ACTION?hl=en"
 
 browser = webdriver.Chrome();
-browser.get("https://play.google.com/store/apps/category/GAME_ACTION?hl=en");
+browser.get(action_url);
 
 #game categories objects of all game titles and category
 all_game_categories = []
+increment = 0;
 
-action_categories = browser.find_elements_by_xpath('//h2[@class="single-title-link"]')
+action_categories = browser.find_elements_by_xpath('//a[contains(text(), "See more")]') # get all the see more buttons
 for category in action_categories:
-	category_titles = category.find_elements_by_xpath('//a[@class="title-link id-track-click"]')
-	print(category_titles[0].text)
-	category_buttons = category.find_elements_by_xpath('//a[@class="see-more play-button small id-track-click apps id-responsive-see-more"]')
-	category_buttons[0].click()
+	category_titles = category.find_elements_by_xpath('//a[@class="title-link id-track-click"]') # get the category title
+	category.click() # click see more button
+	time.sleep(1) #might need to fix
+
 	game_title_elements = browser.find_elements_by_xpath('//a[@class="title"]')
 
 	game_titles = []
@@ -31,13 +32,8 @@ for category in action_categories:
 		print(elem.text)
 		game_titles.append(elem.text)
 
-	game_category = Category(category_title, game_titles)
-	all_game_categories.append(game_category)
-
-	delay = 1 # wait before doing the next scrae on another category
-	time.sleep(10)
-
-	driver.execute_script("window.history.go(-1)")
+	browser.execute_script("window.history.go(-1)")
+	time.sleep(1)
 
 
 
@@ -46,4 +42,4 @@ def index():
 	return render_template('home.html', all_game_categories = all_game_categories)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
