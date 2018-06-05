@@ -1,0 +1,36 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block head %}
+{{super()}}
+
+  {% block scripts %}
+    {{super()}}
+  {% endblock %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Google Play Analysis</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+
+{% endblock %}
+
+{% block content %}
+
+  <div>
+    <header class="masthead" >
+      <div class="site-heading">
+
+        <h1>Google Play Project</h1>
+        <span class="subheading">Scraper</span>
+      </div>
+    </header>
+    
+  </div>
+
+  <div class="container">
+  {% block page_content %}
+  {% endblock %}
+  </div>
+
+{% endblock %}

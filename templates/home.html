@@ -1,6 +1,16 @@
-{% for category in all_game_categories %}
-	{{category.category_title}}
-	{% for title in all_game_categories.all_titles %}
-		{{title}}
+{% extends "layout.html" %}
+
+
+{% block page_content %}
+	{{super()}}
+	{% for category in all_game_categories %}
+		<h2>{{category.category_title}}</h2>
+		
+		<ul class="list-group">
+		{% for title in category.all_titles %}
+			<li class="list-group-item"> {{title}} </li>
+		{% endfor %}
+		</ul>
 	{% endfor %}
-{% endfor %}
+
+{% endblock %}

@@ -1,5 +1,7 @@
 from flask import Flask, render_template
-from models import GameCategories
+from flask_bootstrap import Bootstrap
+
+from models.GameCategories import Category
 import time
 import collections
 
@@ -19,11 +21,14 @@ def WaitforElement(browser, timeout, xpathElement):
 	    browser.quit()
 
 app = Flask(__name__)
+Bootstrap(app) # use bootstrap
 
 action_url = "https://play.google.com/store/apps/category/GAME_ACTION?hl=en"
 
 browser = webdriver.Chrome()
 browser.get(action_url)
+
+
 
 #game categories objects of all game titles and category
 all_game_categories = collections.OrderedDict()
@@ -38,15 +43,15 @@ for title in title_categories:
 
 	all_game_categories[title[0]] = gameTitles
 
+category_wrappers = []
 for category, gamelist in all_game_categories.items():
-	print(category)
-	print(gamelist)
-	print('\n')
+	game_titles_per_category = Category(category, gamelist)
+	category_wrappers.append(game_titles_per_category)
 
 
 @app.route('/')
 def index():
-	return render_template('home.html', all_game_categories = all_game_categories)
+	return render_template('home.html', all_game_categories = category_wrappers)
 
 if __name__ == '__main__':
 	app.run()

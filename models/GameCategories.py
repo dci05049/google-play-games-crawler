@@ -1,4 +1,4 @@
-class Cateogry:
+class Category:
 	category_title = "Not Found"
 	all_titles = []
 
