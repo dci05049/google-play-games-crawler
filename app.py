@@ -39,7 +39,6 @@ for title in title_categories:
 	browser.get(title[1])
 
 	game_title_elements = browser.find_elements_by_xpath('//a[@class="title"]')
-	# gameTitles = [elem.text.encode("utf-8", "ignore") for elem in game_title_elements]
 	gameTitles = [elem.text for elem in game_title_elements]
 
 	all_game_categories[title[0]] = gameTitles
