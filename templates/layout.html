@@ -5,13 +5,28 @@
 {{super()}}
 
   {% block scripts %}
+  <!-- CSS styles for KoolChart -->
+
+    <!--  To support IE 7, 8 -->
+    <!--[if IE]><script language="javascript" type="text/javascript" src="../KoolChart/JS/excanvas.js"></script><![endif]-->
+
+    <!-- KoolChart License Key -->
+    <script type="text/javascript" src="{{ url_for('static', filename='LicenseKey/KoolChartLicense.js') }}"></script>
+
+    <!-- KoolChart JavaScript library -->
+    <script language="javascript" type="text/javascript" src="{{ url_for('static', filename='javascript/KoolChart/JS/KoolChart.js') }}"></script>
+  
+    <!-- Theme js -->
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/KoolChart/Assets/Theme/theme.js') }}"></script>
+
     {{super()}}
   {% endblock %}
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Google Play Analysis</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/KoolChart/Css/KoolChart.css')}}"/>
 
 {% endblock %}
 

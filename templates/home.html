@@ -1,18 +1,25 @@
 {% extends "layout.html" %}
 
+{% block scripts %}
+	{{super()}}
+	<script type="text/javascript" src="{{ url_for('static', filename='javascript/categorychart.js') }}"></script>
+
+{% endblock %}
 
 {% block page_content %}
 	{{super()}}
+	<div id="chartHolder" style="width:600px; height:400px;""></div>
+
 	{% for game_info in game_infos %}
 		<h2>{{game_info.title}}</h2>
 		
 		<ul class="list-group">
-			<li class="list-group-item"> {{game_info.size}} </li>
-			<li class="list-group-item"> {{game_info.developer}} </li>
-			<li class="list-group-item"> {{game_info.current_version}} </li>
-			<li class="list-group-item"> {{game_info.content_rating}} </li>
-			<li class="list-group-item"> {{game_info.game_rate}} </li>
-			<li class="list-group-item"> {{game_info.installs}} </li>
+			<li class="list-group-item"> game size:  {{game_info.size}} </li>
+			<li class="list-group-item"> developer:  {{game_info.developer}} </li>
+			<li class="list-group-item"> current version: {{game_info.current_version}} </li>
+			<li class="list-group-item"> content rating: {{game_info.content_rating}} </li>
+			<li class="list-group-item"> game rating: {{game_info.game_rate}} </li>
+			<li class="list-group-item"> total installs: {{game_info.installs}} </li>
 		</ul>
 	{% endfor %}
 

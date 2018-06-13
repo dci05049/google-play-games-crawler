@@ -1,0 +1,895 @@
+/******************************************************
+ *
+ *			Kool Global
+ *
+ *****************************************************/
+
+/* root default */
+.Kool__Root{
+	color:#000000;
+	font-size:11px;
+	line-height:1.2;
+	font-style:normal;
+	font-weight:normal;
+	font-variant:normal;
+	font-stretch:normal;
+	font-family : inherit;
+
+	box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	-webkit-box-sizing : border-box;
+}
+
+.Kool__Root *{
+	box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	-webkit-box-sizing : border-box;
+
+	/* Delete the gray box that appears when you hold down on the mobile device*/
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+}
+
+/******************************************************
+ *
+ *			Chart Common
+ *
+ *****************************************************/
+
+.Kool__pointer-events-none{
+	pointer-events:none;
+}
+
+.Kool__cursor-pointer{
+	cursor:pointer;
+}
+
+/******************************************************
+ *
+ *			KoolChart
+ *
+ *****************************************************/
+
+.Kool__KoolChart, .Kool__TrialMarkBox{
+	color:#777777;
+	cursor:default;
+
+	/* Delete the blue box that appears when the html element is determined to be selected, such as by dragging or double-clicking */
+	user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+}
+
+.Kool__KoolChart > .Kool__ContentPane{
+	padding:2px;
+}
+
+/******************************************************
+ *
+ *			DataTip, AxisDataTip
+ *
+ *****************************************************/
+
+.Kool__DataTip, .Kool__AxisDataTip{
+	opacity:0;
+	color:#888;
+	font-size:12px;
+	font-style:normal;
+	position:absolute;
+	padding:4px 10px;
+	cursor:default;
+	white-space:nowrap;
+	border-radius:4px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#e9e9e9;
+	background-color:#fff;
+	filter:alpha(opacity=100);
+	background-color:rgba(255, 255, 255, 0.9);
+}
+
+.Kool__DataTipTransition{
+	transition:left 200ms, top 200ms, border 0.5s, opacity 0.5s;
+	transition-timing-function:ease-out;
+	-webkit-transition:left 200ms, top 200ms, border 0.5s, opacity 0.5s;
+	-webkit-transition-timing-function:ease-out;
+}
+
+.Kool__DataTipMarker{
+	float:left;
+	width:9px;
+	height:9px;
+	margin-top:3px;
+	border:1px solid #ffffff;
+}
+
+.Kool__show_data_tip{
+	opacity:1;
+}
+
+/******************************************************
+ *
+ *			Caption, SubCaption
+ *
+ *****************************************************/
+
+.Kool__Caption{
+	font-size : 14px;
+	color : #333333;
+	text-align : center;
+}
+
+.Kool__SubCaption{
+	font-size : 11px;
+	color : #999999;
+	text-align : center;	
+}
+
+/******************************************************
+ *
+ *			Line2DSeries DisplayNameLabel
+ *
+ *****************************************************/
+
+.Kool__DisplayNameLabel{
+	cursor:default;
+	white-space:nowrap;
+}
+
+/******************************************************
+ *
+ *			Legend
+ *
+ *****************************************************/
+
+/* Legend */
+.Kool__Legend, .Kool__SubLegend{
+	border:1px solid #e9e9e9;
+	font-size:11px;
+	font-weight:normal;
+	color:#888;
+	background-color:#ffffff;
+	cursor:default;
+}
+
+/* Legend - ContentPane */
+.Kool__Legend .Kool__ContentPane, .Kool__SubLegend .Kool__ContentPane{
+	padding:5px;
+}
+
+.Kool__LegendItem, .Kool__CheckableLegendItem{
+	padding-left:0px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	border:0px none;
+	background-color:rgba(255, 255, 255, 0);
+	white-space:nowrap;
+}
+
+/* unchecked */
+.Kool__UnChecked{
+	color:#ccc;
+}
+
+.Kool__un-focused{
+	opacity:0.2;
+	filter:alpha(opacity=20);
+}
+
+/* IE 8 */
+@media \0{
+	.Kool__un-focused{
+		visibility:hidden;
+	}	
+}
+
+/******************************************************
+ *
+ *			ColorRangeLegend
+ *
+ *****************************************************/
+
+/* ColorRangeLegend */
+.Kool__ColorRangeLegend{
+	position:absolute;
+	overflow:hidden;
+	font-size:11px;
+	color:#555555;
+	cursor:default;
+}
+
+/* ColorRangeLegend - Label */
+.Kool__ColorRangeLegend_Label{
+	position:absolute;
+}
+
+/* ColorRangeLegend - Horizontal Arrow */
+.Kool__ColorRangeLegend_HArrow{
+	width:5px;
+	height:5px;
+	border-top:5px solid #555555;
+	border-left:2.5px solid transparent;
+	border-right:2.5px solid transparent;
+	border-bottom:5px solid transparent;
+	position:absolute;
+	box-sizing:border-box;
+}
+
+/* ColorRangeLegend - Vertical Arrow */
+.Kool__ColorRangeLegend_VArrow{
+	width:5px;
+	height:5px;
+	border-top:2.5px solid transparent;
+	border-left:5px solid transparent;
+	border-right:5px solid #555555;
+	border-bottom:2.5px solid transparent;
+	position:absolute;
+	box-sizing:border-box;
+}
+
+/* for IE7 */
+*.Kool__ColorRangeLegend_HArrow{
+	width:2px;
+	height:2px;
+	border-top:5px solid #555555;
+	border-left:2.5px solid transparent;
+	border-right:2.5px solid transparent;
+	border-bottom:5px solid transparent;
+	position:absolute;
+}
+
+*.Kool__ColorRangeLegend_VArrow{
+	width:2px;
+	height:2px;
+	border-top:2.5px solid transparent;
+	border-left:6px solid transparent;
+	border-right:5px solid #555555;
+	border-bottom:2.5px solid transparent;
+	position:absolute;
+}
+/* for IE7 end */
+
+/******************************************************
+ *
+ *			Chart Menu
+ *
+ *****************************************************/
+
+/* Chart Menu */
+.Kool__ChartMenu{
+	top:4px;
+	right:4px;
+	width:20px;
+	height:20px;
+	font-size:12px;
+	border-radius:1px;
+	border:1px solid #ccc;
+	
+	z-index:1;
+	overflow:hidden;
+	opacity:0;
+	position:absolute;
+	transition:width 0.2s, height 0.2s, opacity 0.2s;
+	background:url(./menu.png) #fff no-repeat 50% 50%;
+	
+	padding-left:18px;
+	padding-top:18px;
+	white-space:nowrap;
+}
+
+@media, {
+	.Kool__ChartMenu{
+		padding:0;
+	}
+}
+
+@media \0{
+	.Kool__ChartMenu{
+		padding:0;
+	}
+}
+
+/* ChartMenu when mouse over the chart area */
+.Kool__chart_menu_hover{
+	opacity:1;
+}
+
+/* When mouse over ChartMenu */
+.Kool__chart_menu_expand{
+	width:70px;
+	height:auto;
+	padding:4px;
+	background-position:-20px -20px;
+}
+
+/* Items attached to ChartMenu */
+.Kool__ChartMenuItem{
+	width:60px;
+	padding-left:2px;
+
+	cursor:pointer;
+	background-color:#ffffff;
+	transition:background-color 0.2s;
+	white-space:nowrap;
+}
+
+/* Img set in ChartMenuItem */
+.Kool__ChartMenuItem_Img{
+	width:12px;
+	height:12px;
+	margin-right:4px;
+}
+
+/* When mouse over ChartMenuItem */
+.Kool__ChartMenuItem:hover{
+	background-color:#555555;
+	color:#ffffff;
+}
+
+/******************************************************
+ *
+ *			ScrollBar
+ *
+ *****************************************************/
+
+.Kool__ScrollBar {
+	background-color:#fff;
+}
+
+.Kool__HScrollTrack, .Kool__VScrollTrack {
+	border:1px solid #e6e6e6;
+}
+
+.Kool__HScrollThumb, .Kool__VScrollThumb {
+	cursor:pointer;
+	background-color:#e6e6e6;
+	transition:background-color 0.2s;
+}
+
+.Kool__HScrollThumb:hover, .Kool__VScrollThumb:hover{
+	background-color:#888888;
+}
+
+.Kool__HScrollThumbHeader{
+}
+
+.Kool__HScrollUpArrow {
+	border:1px solid #e6e6e6;
+	cursor:pointer;
+	background:url("./scroll_left_arrow.png") no-repeat 50% 50%;
+}
+
+.Kool__HScrollDownArrow {
+	border:1px solid #e6e6e6;
+	cursor:pointer;
+	background:url("./scroll_right_arrow.png") no-repeat 50% 50%;
+}
+
+.Kool__VScrollThumbHeader{
+}
+
+.Kool__VScrollUpArrow {
+	border:1px solid #e6e6e6;
+	border-right:none;
+	cursor:pointer;
+	background:url("./scroll_up_arrow.png") no-repeat 50% 50%;
+}
+
+.Kool__VScrollDownArrow {
+	border:1px solid #e6e6e6;
+	border-right:none;
+	cursor:pointer;
+	background:url("./scroll_down_arrow.png") no-repeat 50% 50%;
+}
+
+/******************************************************
+ *
+ *			SlideChart
+ *
+ *****************************************************/
+
+.Kool__SlideController{
+}
+
+.Kool__PrevCanvas, .Kool__NextCanvas{
+	position:absolute;
+	z-index:1;
+}
+
+/* Slide previous button */
+.Kool__SlidePrevButton{
+	background:url("./slide_left.png") no-repeat 50% 50%;
+}
+
+/* Slide next button */
+.Kool__SlideNextButton{
+	background:url("./slide_right.png") no-repeat 50% 50%;
+}
+
+.Kool__SlidePrevButton, .Kool__SlideNextButton{
+	width:20px;
+	height:20px;
+}
+
+/* Slide button */
+.Kool__SlideButton{
+	width:15px;
+	height:15px;
+	background:url("./slide_button.png") no-repeat 50% 50%;
+}
+
+/* Selected slide button */
+.Kool__SlideActiveButton{
+	background:url("./slide_active_button.png") no-repeat 50% 50%;
+}
+
+.Kool__SlideButton, .Kool__SlidePrevButton, .Kool__SlideNextButton{
+	cursor:pointer;
+	position:absolute;
+}
+
+/******************************************************
+ *
+ *			Slider
+ *
+ *****************************************************/
+
+.Kool__Slider, .Kool__HSlider, .Kool__VSlider {
+	position : absolute;
+	cursor : default;
+	font-size : 11px;
+
+	-ms-user-select : none;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+	user-select : none;
+}
+.Kool__Slider_Track {
+	width : 200px;
+	height : 4px;
+	border-width : 1px;
+	border-style : inset;
+	border-color : #DDDDDD;
+	position : absolute;
+
+	-ms-user-select : none;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+	user-select : none;
+}
+.Kool__Slider_HighlightTrack {
+	width : 1px;
+	height : 2px;
+	border-width : 1px;
+	border-style : inset;
+	border-color : #FF0000;
+	position : absolute;
+}
+.Kool__Slider_TrackHitArea {
+	position : absolute;
+}
+
+.Kool__Slider_Ticks {
+	position : absolute;
+}
+.Kool__Slider_Tick {
+	position : absolute;
+	border-width : 1px;
+	border-left-style : solid;
+}
+.Kool__Slider_Labels .Kool__Label {
+	position : absolute;
+
+	-ms-user-select : none;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+	user-select : none;
+}
+.Kool__SliderThumb {
+	display : inline-block;
+	position : absolute;
+	width : 16px;
+	height : 16px;
+	background:#f5f5f5;
+	background:linear-gradient(rgb(255, 255, 255), rgb(213, 213, 213));
+	border:solid 1px rgb(200, 200, 200);
+	border-radius : 12px;
+	outline : none;
+
+	-ms-user-select : none;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+	user-select : none;
+}
+
+/******************************************************
+ *
+ *			MotionController
+ *
+ *****************************************************/
+
+.Kool__MotionController{
+	height:33px;
+	padding:4px 4px 4px 19px;
+	border:solid 1px #dbdbdb;
+	border-radius:3px;
+	background-color:#f5f5f5;
+}
+
+.Kool__PlayButton{
+	position:absolute;
+	width:11px;
+	height:13px;
+	border-style:none;
+	cursor:pointer;
+	text-align:center;
+	padding-top:5px;
+	background:url(./motion_play_button.png) no-repeat;
+	background-position-x:50%;
+}
+
+.motion_pause{
+	background-position-y:100%;
+}
+
+.Kool__Pause{
+	background:url("./loader.gif") no-repeat 50% 50%;
+}
+
+.Kool__MotionController .Kool__HSlider{
+	height:14px;
+	position:absolute;
+	font-size:1px;
+	cursor:pointer;
+}
+
+.Kool__MotionController .Kool__Slider_Track{
+	border-top:solid 2px #cecece;
+	border-bottom:solid 2px #e5e5e5;
+	background-color:#fff;
+	height:10px;
+	border-radius:6px;
+}
+
+.Kool__MotionController .Kool__Slider_HighlightTrack{
+	border:none;
+	height:8px;
+	border-radius:6px;
+	border-top:solid 1px #ff9600;
+	border-bottom:solid 1px #fba72d;
+	background:url(./background_highlight_track.png);
+}
+
+.Kool__MotionController .Kool__SliderThumb{
+	position:absolute;
+}
+
+/******************************************************
+ *
+ *			CrossRangeZoomer
+ *
+ *****************************************************/
+
+.Kool__CrossRangeZoomer{
+	pointer-events:auto;
+}
+
+.Kool__CrossHair_Label{
+	position:absolute;
+	color:#ffffff;
+	font-size:11px;
+	font-weight:normal;
+	font-style:normal;
+	background-color:#999;
+	border:1px solid #999;
+	padding:2px 4px;
+	text-align:center;
+	visibility:hidden;
+	cursor:default;
+}
+
+.Kool__CrossRangeZoomer_Restore{
+	position:absolute;
+	top:0px;
+	right:0px;
+	cursor:pointer;
+	font-size:12px;
+	color:#666;
+	text-align:center;
+	padding:8px;
+	min-width:83px;
+	min-height:29px;
+	transition:box-shadow 0.2s;
+	background-color:#fff;
+	filter:alpha(opacity=80);
+	background-color:rgba(255, 255, 255, 0.8);
+
+	-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+	-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+	box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+}
+
+@media, {
+	.Kool__CrossRangeZoomer_Restore{
+		min-height:22px;
+		padding-bottom:0;
+	}
+}
+
+@media \0{
+	.Kool__CrossRangeZoomer_Restore{
+		min-height:22px;
+		padding-bottom:10;
+	}
+}
+
+.Kool__CrossRangeZoomer_Restore:hover{
+	-webkit-box-shadow:0px 2px 5px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow:0px 2px 5px 0px rgba(0,0,0,0.15);
+	box-shadow:0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+/******************************************************
+ *
+ *			DualChart
+ *
+ *****************************************************/
+
+.Kool__MainChart, .Kool__SubChart{
+	position:absolute;
+}
+
+/******************************************************
+ *
+ *			SymboldDiv
+ *
+ *****************************************************/
+
+ .Kool__SymbolDiv{
+	cursor:pointer;
+	position:absolute;
+	text-align:center;
+ }
+
+/******************************************************
+ *
+ *			History
+ *
+ *****************************************************/
+
+.Kool__ChartRangeSelector_LeftThumb, .Kool__ChartRangeSelector_RightThumb{
+	width:10px;
+	height:100%;
+	cursor:col-resize;
+	border-bottom:solid 1px #b5b5b7;
+	background:url("./selector.png") no-repeat 50% 50%;
+	background-color:rgb(236, 240, 241);
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	background-color:rgba(236, 240, 241, 0.6);
+}
+
+.Kool__ChartRangeSelector_Left, .Kool__ChartRangeSelector_Right{
+	border:solid 1px #eee;
+	border-bottom:solid 1px #b5b5b7;
+	background-color:rgb(236, 240, 241);
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	background-color:rgba(236, 240, 241, 0.6);
+}
+
+.Kool__ChartRangeSelector_Center{
+	cursor:pointer;
+	background-color:rgb(255, 255, 255);
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	background-color:rgba(255, 255, 255, 0);
+}
+
+/******************************************************
+ *
+ *			CanvasLabel ( Memo )
+ *
+ *****************************************************/
+
+ .Kool__CanvasLabel{
+ }
+
+/******************************************************
+ *
+ *			DrillDownMenu
+ *
+ *****************************************************/
+
+ .Kool__DrillDownMenu{
+	left:0px;
+	top:0px;
+	position:absolute;
+	text-align:center;
+ }
+
+ .Kool__DrillDownMenu > .Kool__DrillDownBackButton, .Kool__DrillDownFirstButton{
+	min-width:83px;
+	min-height:29px;
+	text-align:center;
+	color:#666;
+	background-color:rgba(255, 255, 255, 0.8);
+	transition:box-shadow 0.2s;
+	cursor:pointer;
+	float:left;
+	margin-right:8px;
+	padding:8px;
+	
+	-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+	-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+	box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);
+ }
+
+ @media, {
+	.Kool__DrillDownMenu > .Kool__DrillDownBackButton, .Kool__DrillDownFirstButton{
+		min-height:22px;
+		padding-bottom:0px;
+	}
+ }
+
+ @mdeia \0{
+	.Kool__DrillDownMenu > .Kool__DrillDownBackButton, .Kool__DrillDownFirstButton{
+		min-height:22px;
+		padding-bottom:10px;
+	}
+ }
+
+.Kool__DrillDownMenu > .Kool__DrillDownBackButton:hover, .Kool__DrillDownFirstButton:hover{
+	-webkit-box-shadow:0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	-moz-box-shadow:0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	box-shadow:0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+ }
+
+ /******************************************************
+ *
+ *			Preloader
+ *
+ *****************************************************/
+
+.Kool__Preloader{
+	top:0px;
+	left:0px;
+	z-index:2;
+	width:100%;
+	height:100%;
+	opacity:0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+	background:url("./loader.gif") 50% 50% no-repeat #FFF;
+}
+
+/******************************************************
+ *
+ *			DataEditor
+ *
+ *****************************************************/
+
+.Kool__DataEditor{
+	overflow-y:hidden;
+	overflow-x:auto;
+}
+
+.Kool__DataEditor table{
+	height:100%;
+	border:solid 1px #555555;
+	text-decoration:none;
+	font-style:normal;
+	font-weight:normal;
+	font-size:11px;
+	text-align:center;
+	cursor:default;
+}
+
+/* default th */
+.Kool__DataEditor th{
+	color:#ffffff;
+	font-weight:bold;
+	font-size:11px;
+	letter-spacing:0;
+	text-align:center;
+	height:22px;
+	padding:2px 4px;
+	background:-ms-linear-gradient(270deg, #6e7376 20%, #6e7376 100%);
+	background:-moz-linear-gradient(270deg, #6e7376 20%, #6e7376 100%);
+	background:-o-linear-gradient(270deg, #6e7376 20%, #6e7376 100%);
+	background:-webkit-linear-gradient(270deg, #6e7376 20%, #6e7376 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6e7376', endColorstr='#ff6e7376');
+}
+
+.Kool__DataEditor th.column{
+	border-right:solid 1px #555555;
+}
+
+.Kool__DataEditor th.row{
+	border-bottom:solid 1px #555555;
+}
+
+.Kool__DataEditor td{
+	padding:2px 4px;
+}
+
+.Kool__DataEditor td.column{
+	border-right:solid 1px #555555;
+}
+
+.Kool__DataEditor td.row{
+	border-bottom:solid 1px #555555;
+}
+
+.Kool__DataEditor td.oddRow{
+	background-color:#EFEEEE;
+}
+
+.Kool__DataEditor td.evenRow{
+	background-color:#FFFFFF;
+}
+
+.Kool__DataEditor td:hover{
+	background-color:#E3FFD6;
+}
+
+.Kool__DataEditor td:focus{
+	background-color:#D1EBB4;
+	color:#ff0000;
+}
+
+.Kool__CloseButton{
+	background:url("./close_btn.png") no-repeat;
+	cursor:pointer;
+	position:absolute;
+	width:13px;
+	height:13px;
+}
+
+.Kool__CloseButton:hover{
+	background:url("./hover_close_btn.png") no-repeat;
+}
+
+/******************************************************
+ *
+ *			Information
+ *
+ *****************************************************/
+
+.Kool__Information{
+	overflow:hidden;
+}
+
+/******************************************************
+ *
+ *			UserContent
+ *
+ *****************************************************/
+
+ .Kool__UserDefineWrapper{
+	left:0;
+	top:0;
+	position:absolute;
+	white-space:nowrap;
+}
+
+/******************************************************
+ *
+ *			SelectionContainer
+ *
+ *****************************************************/
+
+.Kool__SelectionContainer{
+	position:absolute;
+}
+
+/******************************************************
+ *
+ *			SelectionContainer
+ *
+ *****************************************************/
+
+ .Kool__RangeSelector{
+	position:absolute;
+	border:solid 1px rgb(27, 161, 226);
+	background-color:rgba(27, 161, 226, 0.5);
+ }

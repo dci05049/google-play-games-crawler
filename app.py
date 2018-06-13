@@ -57,19 +57,21 @@ for title in title_categories:
 		i += 1
 		browser.get(link)
 		#get the game information here 
+		title = browser.find_elements_by_xpath('//h1[@class="AHFaub"]')[0].get_attribute("innerText")
+		game_rate = browser.find_elements_by_xpath('//div[@class="BHMmbe"]')[0].get_attribute("innerText")
+		#get game data
 		infos = browser.find_elements_by_xpath('//span[@class="htlgb"]')
 		info_texts = [(x.get_attribute('innerText')) for x in infos]
-		for x in info_texts:
-			print (x)
+		print (info_texts)
+		last_updated = info_texts[0]
+		game_size = info_texts[2]
+		installs = info_texts[4]
+		current_version = info_texts[6]
+		content_rating = info_texts[10]
+		developer = info_texts[20]
 
-		#installs = browser.find_elements_by_xpath("//*[contains(text(), 'Installs')]")[0].get_attribute('innerText')
-		#current_version = browser.find_elements_by_xpath("//*[contains(text(), 'Current Version')]")[0].get_attribute('innerText')
-		#content_rating = browser.find_elements_by_xpath("//*[contains(text(), 'Content Rating')]")[0].get_attribute('innerText')
-		#game_rate = browser.find_elements_by_xpath('.//div[@class="BHMmbe"]')[0].get_attribute('innerText').get_attribute('innerText')
-		#developer = browser.find_elements_by_xpath("//*[contains(text(), 'Offered By')]")[0].get_attribute('innerText')
-
-		#game_info = GameInfo(title, size, developer, current_version, game_rate, content_rating, installs)
-		#game_infos.append(game_info)
+		game_info = GameInfo(title, game_size, developer, current_version, game_rate, content_rating, installs)
+		game_infos.append(game_info)
 	break
 
 
