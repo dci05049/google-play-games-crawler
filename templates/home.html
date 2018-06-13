@@ -3,13 +3,16 @@
 
 {% block page_content %}
 	{{super()}}
-	{% for category in all_game_categories %}
-		<h2>{{category.category_title}}</h2>
+	{% for game_info in game_infos %}
+		<h2>{{game_info.title}}</h2>
 		
 		<ul class="list-group">
-		{% for title in category.all_titles %}
-			<li class="list-group-item"> {{title}} </li>
-		{% endfor %}
+			<li class="list-group-item"> {{game_info.size}} </li>
+			<li class="list-group-item"> {{game_info.developer}} </li>
+			<li class="list-group-item"> {{game_info.current_version}} </li>
+			<li class="list-group-item"> {{game_info.content_rating}} </li>
+			<li class="list-group-item"> {{game_info.game_rate}} </li>
+			<li class="list-group-item"> {{game_info.installs}} </li>
 		</ul>
 	{% endfor %}
 
